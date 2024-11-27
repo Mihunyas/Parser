@@ -1,0 +1,15 @@
+[
+    {
+        "qustion_id": null,
+        "title": "Python regex and Gcode",
+        "body": "<p>I'm parsing Gcode files for 3D printing.  There are similar lines and I'm trying to pick the pattern (it indicates the function of the line).  One problem I've run into is returning a positive result whether or not a parameter is in the line.</p>\n<p>These two lines are both extrusions (squirting plastic), but one has the &quot;F&quot; parameter in it.  The parameters will sometimes be integers, and other times they will be floats.  The X, Y, and E parameters may be negative or positive.</p>\n<pre><code>G1 F3000 X123.45 Y123.45 E123.45678\nG1 X-200.00 Y200.00 E222.34567\n</code></pre>\n<p>This pattern kind of works, but fails for the second example where the &quot;F&quot; parameter is missing (which is most of the time).</p>\n<pre><code>G1 F(\\d+\\.\\d+|\\d+) X(-?\\d+\\.\\d+|-?\\d+) Y(-?\\d+\\.\\d+|-?\\d+) E(-?\\d+\\.\\d+|-?\\d+)\n</code></pre>\n<p>One problem looks to be that when the &quot;F&quot; parameter is missing, the pattern has an extra &quot;space&quot; character.  My workaround has been to use an IF statement, but it just looks clumsy.\nI tried putting a &quot;|&quot; in hoping for &quot;If F or not F&quot; but haven't gotten that to work.</p>\n<p>A second part of this would be; how do I return values from (for example) the &quot;X&quot; parameter?</p>\n",
+        "tags": [
+            "python",
+            "regex"
+        ],
+        "link": "https://stackoverflow.com/questions/79228789/python-regex-and-gcode",
+        "creation_date": "2024-11-27 02:24:49",
+        "score": 0,
+        "answer": []
+    }
+]
